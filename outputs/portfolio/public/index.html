@@ -1,218 +1,188 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Portfolio of Von Andrew M. Castillo - full-stack developer, game developer and IoT builder."
-    />
-    <title>Von Andrew Castillo - Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="shuffle.css" />
-    <link rel="stylesheet" href="links.css" />
-  </head>
-  <body>
-    <div class="noise"></div>
-    <header class="site-header">
-      <a class="logo" href="#top" aria-label="Home">V<span>.</span>C</a>
-      <nav aria-label="Primary navigation">
-        <a href="#work">Work</a><a href="#about">About</a
-        ><a href="#contact">Contact</a
-        ><a href="#" id="navResume" target="_blank" rel="noreferrer">Resume</a>
-      </nav>
-      <div style="display: flex; gap: 15px; align-items: center;">
-        <button id="themeToggle" type="button" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 18px; color: var(--ink); padding: 0;">
-          <span id="themeIcon">🌙</span>
-        </button>
-        <button class="shuffle-toggle" id="shuffleToggle" type="button">
-          <span>✦</span> Surprise me
-        </button>
-      </div>
-    </header>
 
-    <main id="top">
-      <section class="hero fade-in-up">
-        <div class="hero-copy">
-          <p class="eyebrow"><i></i> Available for opportunities</p>
-          <h1>Building worlds,<br /><em>systems</em> &amp; connections.</h1>
-          <p class="hero-intro">
-            I'm Von Andrew Castillo, a developer who moves comfortably between
-            immersive game mechanics, reliable backend systems, connected
-            hardware, and purposeful web experiences.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#work"
-              >Explore selected work <span>↘</span></a
-            >
-            <a class="text-link" href="#contact"
-              >Let's work together <span>→</span></a
-            >
-          </div>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="arc"></div>
-          <div class="code-window">
-            <div class="window-dots"><b></b><b></b><b></b></div>
-            <p><span>const</span> curiosity = <strong>true</strong>;</p>
-            <p>build(<span>ideas</span>)</p>
-            <p class="cursor">_</p>
-          </div>
-          <p class="art-label">01 / INTERACTIVE<br />PORTFOLIO</p>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Von Andrew M. Castillo - full-stack developer, game developer and IoT builder." />
+  <title>Von Andrew Castillo - Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="shuffle.css" />
+  <link rel="stylesheet" href="links.css" />
+</head>
 
-      <section class="stats fade-in-up" aria-label="Portfolio highlights">
-        <div><strong>8</strong><span>Selected projects</span></div>
-        <div><strong>4</strong><span>Creative disciplines</span></div>
-        <div><strong>2022</strong><span>Building since</span></div>
-        <div><strong>∞</strong><span>Ideas in progress</span></div>
-      </section>
-
-      <section class="work-section fade-in-up" id="work">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Selected work</p>
-            <h2>Things I've made<br />and learned from.</h2>
-          </div>
-          <p class="heading-note">
-            A collection of games, platforms, devices, and the systems that make
-            them work.
-          </p>
-        </div>
-        <div class="controls">
-          <div class="filters" id="filters" aria-label="Filter projects"></div>
-          <label class="search"
-            ><span>⌕</span
-            ><input
-              id="search"
-              type="search"
-              placeholder="Search projects or stack"
-              aria-label="Search projects"
-          /></label>
-        </div>
-        <p class="active-filter" id="activeFilter" aria-live="polite">
-          Showing all projects
-        </p>
-        <div class="project-grid" id="projectGrid"></div>
-        <div class="empty-state" id="emptyState" hidden>
-          No project matches that search. Try a different term.
-        </div>
-      </section>
-
-      <section class="about fade-in-up" id="about">
-        <div class="about-mark">V<span>.</span></div>
-        <div>
-          <p class="eyebrow">A little about me</p>
-          <h2>Practical engineering<br />with a playful edge.</h2>
-          <p>
-            I enjoy translating an idea into an experience people can actually
-            use - whether that means a suspenseful game sequence, a responsive
-            interface, an efficient data model, or an Arduino-powered feeder.
-          </p>
-          <div class="discipline-list">
-            <span>Game development</span><span>Backend &amp; APIs</span
-            ><span>IoT / Hardware</span><span>Full-stack web</span>
-          </div>
-          <br /><a
-            class="button button-primary"
-            id="aboutResume"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-            >Download CV <span>↓</span></a
-          >
-        </div>
-      </section>
-
-      <section class="contact fade-in-up" id="contact">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Have a project<br />in mind?</h2>
-        <form action="https://formspree.io/f/placeholder" method="POST" class="contact-form">
-          <input type="email" name="email" placeholder="Your Email Address" required />
-          <textarea name="message" placeholder="What would you like to discuss?" rows="4" required></textarea>
-          <button type="submit" class="button button-primary">Send Message <span>↗</span></button>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <span>© 2026 Von Andrew M. Castillo</span
-      ><span>Designed &amp; built for the web</span>
-    </footer>
-
-    <dialog class="project-modal" id="projectModal">
-      <button
-        class="modal-close"
-        id="modalClose"
-        aria-label="Close project details"
-      >
-        ×
+<body>
+  <div class="noise"></div>
+  <header class="site-header">
+    <a class="logo" href="#top" aria-label="Home">V<span>.</span>C</a>
+    <nav aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#" id="navResume"
+        target="_blank" rel="noreferrer">Resume</a>
+    </nav>
+    <div style="display: flex; gap: 15px; align-items: center;">
+      <button id="themeToggle" type="button" aria-label="Toggle dark mode"
+        style="background: none; border: none; cursor: pointer; font-size: 18px; color: var(--ink); padding: 0;">
+        <span id="themeIcon">🌙</span>
       </button>
-      <div id="modalContent"></div>
-    </dialog>
-    <aside
-      class="shuffle-panel"
-      id="shufflePanel"
-      aria-label="Project discovery"
-      hidden
-    >
-      <button
-        class="shuffle-close"
-        id="shuffleClose"
-        aria-label="Close project discovery"
-      >
-        ×
+      <button class="shuffle-toggle" id="shuffleToggle" type="button">
+        <span>✦</span> Surprise me
       </button>
-      <p class="eyebrow">Project discovery</p>
-      <p class="shuffle-kicker">A fresh pick from the archive</p>
-      <p class="shuffle-category" id="shuffleCategory"></p>
-      <h2 id="shuffleTitle"></h2>
-      <p class="shuffle-description" id="shuffleDescription"></p>
-      <div class="shuffle-tags" id="shuffleTags"></div>
-      <div class="shuffle-actions">
-        <button class="button button-primary" id="shuffleView" type="button">
-          View case study <span>↗</span></button
-        ><button class="shuffle-again" id="shuffleAgain" type="button">
-          Another project ↻
-        </button>
-      </div>
-    </aside>
-    <!-- Floating AI Chat Widget -->
-    <div id="ai-chat-widget" class="chat-widget">
-      <button id="chat-bubble" class="chat-bubble" aria-label="Open AI Assistant">
-        <span class="chat-icon">✨</span>
-      </button>
-      <div id="chat-window" class="chat-window hidden">
-        <div class="chat-header">
-          <div class="chat-title">
-            <span class="status-dot"></span> AI Assistant
-          </div>
-          <button id="chat-close" class="chat-close" aria-label="Close chat">×</button>
-        </div>
-        <div id="chat-history" class="chat-history">
-          <div class="chat-message ai-message">
-            Hi! I'm Von's AI assistant. How can I help you today?
-          </div>
-        </div>
-        <form id="chat-form" class="chat-form">
-          <input type="text" id="chat-input" placeholder="Ask me anything..." required />
-          <span id="chat-remaining" style="font-size: 11px; color: #888; align-self: center; padding: 0 4px;" title="Prompts remaining">5</span>
-          <button type="submit" class="chat-submit" aria-label="Send">↑</button>
-        </form>
-      </div>
     </div>
+  </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="../config/content.js"></script>
-    <script src="../src/agents/portfolioAgent.js"></script>
-    <script src="../src/app.js"></script>
-  </body>
+  <main id="top">
+    <section class="hero fade-in-up">
+      <div class="hero-copy">
+        <p class="eyebrow"><i></i> Available for opportunities</p>
+        <h1>Building worlds,<br /><em>systems</em> &amp; connections.</h1>
+        <p class="hero-intro">
+          I'm Von Andrew Castillo, a developer who moves comfortably between
+          immersive game mechanics, reliable backend systems, connected
+          hardware, and purposeful web experiences.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#work">Explore selected work <span>↘</span></a>
+          <a class="text-link" href="#contact">Let's work together <span>→</span></a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="arc"></div>
+        <div class="code-window">
+          <div class="window-dots"><b></b><b></b><b></b></div>
+          <p><span>const</span> curiosity = <strong>true</strong>;</p>
+          <p>build(<span>ideas</span>)</p>
+          <p class="cursor">_</p>
+        </div>
+        <p class="art-label">01 / INTERACTIVE<br />PORTFOLIO</p>
+      </div>
+    </section>
+
+    <section class="stats fade-in-up" aria-label="Portfolio highlights">
+      <div><strong>8</strong><span>Selected projects</span></div>
+      <div><strong>4</strong><span>Creative disciplines</span></div>
+      <div><strong>2022</strong><span>Building since</span></div>
+      <div><strong>∞</strong><span>Ideas in progress</span></div>
+    </section>
+
+    <section class="work-section fade-in-up" id="work">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>Things I've made<br />and learned from.</h2>
+        </div>
+        <p class="heading-note">
+          A collection of games, platforms, devices, and the systems that make
+          them work.
+        </p>
+      </div>
+      <div class="controls">
+        <div class="filters" id="filters" aria-label="Filter projects"></div>
+        <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search projects or stack"
+            aria-label="Search projects" /></label>
+      </div>
+      <p class="active-filter" id="activeFilter" aria-live="polite">
+        Showing all projects
+      </p>
+      <div class="project-grid" id="projectGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        No project matches that search. Try a different term.
+      </div>
+    </section>
+
+    <section class="about fade-in-up" id="about">
+      <div class="about-mark">V<span>.</span></div>
+      <div>
+        <p class="eyebrow">A little about me</p>
+        <h2>Practical engineering<br />with a playful edge.</h2>
+        <p>
+          I enjoy translating an idea into an experience people can actually
+          use - whether that means a suspenseful game sequence, a responsive
+          interface, an efficient data model, or an Arduino-powered feeder.
+        </p>
+        <div class="discipline-list">
+          <span>Game development</span><span>Backend &amp; APIs</span><span>IoT / Hardware</span><span>Full-stack
+            web</span>
+        </div>
+        <br /><a class="button button-primary" id="aboutResume" href="#" target="_blank" rel="noreferrer">Download CV
+          <span>↓</span></a>
+      </div>
+    </section>
+
+    <section class="contact fade-in-up" id="contact">
+      <p class="eyebrow">Get in touch</p>
+      <h2>Have a project<br />in mind?</h2>
+      <form action="https://formspree.io/f/mgawkrny" method="POST" class="contact-form">
+        <input type="email" name="email" placeholder="Your Email Address" required />
+        <textarea name="message" placeholder="What would you like to discuss?" rows="4" required></textarea>
+        <button type="submit" class="button button-primary">Send Message <span>↗</span></button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <span>© 2026 Von Andrew M. Castillo</span><span>Designed &amp; built for the web</span>
+  </footer>
+
+  <dialog class="project-modal" id="projectModal">
+    <button class="modal-close" id="modalClose" aria-label="Close project details">
+      ×
+    </button>
+    <div id="modalContent"></div>
+  </dialog>
+  <aside class="shuffle-panel" id="shufflePanel" aria-label="Project discovery" hidden>
+    <button class="shuffle-close" id="shuffleClose" aria-label="Close project discovery">
+      ×
+    </button>
+    <p class="eyebrow">Project discovery</p>
+    <p class="shuffle-kicker">A fresh pick from the archive</p>
+    <p class="shuffle-category" id="shuffleCategory"></p>
+    <h2 id="shuffleTitle"></h2>
+    <p class="shuffle-description" id="shuffleDescription"></p>
+    <div class="shuffle-tags" id="shuffleTags"></div>
+    <div class="shuffle-actions">
+      <button class="button button-primary" id="shuffleView" type="button">
+        View case study <span>↗</span></button><button class="shuffle-again" id="shuffleAgain" type="button">
+        Another project ↻
+      </button>
+    </div>
+  </aside>
+  <!-- Floating AI Chat Widget -->
+  <div id="ai-chat-widget" class="chat-widget">
+    <button id="chat-bubble" class="chat-bubble" aria-label="Open AI Assistant">
+      <span class="chat-icon">✨</span>
+    </button>
+    <div id="chat-window" class="chat-window hidden">
+      <div class="chat-header">
+        <div class="chat-title">
+          <span class="status-dot"></span> AI Assistant
+        </div>
+        <button id="chat-close" class="chat-close" aria-label="Close chat">×</button>
+      </div>
+      <div id="chat-history" class="chat-history">
+        <div class="chat-message ai-message">
+          Hi! I'm Von's AI assistant. How can I help you today?
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        <input type="text" id="chat-input" placeholder="Ask me anything..." required />
+        <span id="chat-remaining" style="font-size: 11px; color: #888; align-self: center; padding: 0 4px;"
+          title="Prompts remaining">5</span>
+        <button type="submit" class="chat-submit" aria-label="Send">↑</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../config/content.js"></script>
+  <script src="../src/agents/portfolioAgent.js"></script>
+  <script src="../src/app.js"></script>
+</body>
+
 </html>
