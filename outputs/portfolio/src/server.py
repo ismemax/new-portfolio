@@ -23,6 +23,8 @@ class ChatRequest(BaseModel):
     history: list
     systemInstruction: str
 
+from datetime import date
+
 # In-memory store for basic rate limiting
 user_limits = {}
 MAX_PROMPTS = 5
@@ -36,12 +38,20 @@ async def chat(request_data: ChatRequest, request: Request):
     else:
         client_ip = request.client.host if request.client else "unknown"
         
-    user_limits[client_ip] = user_limits.get(client_ip, 0) + 1
+    today_str = date.today().isoformat()
     
-    if user_limits[client_ip] > MAX_PROMPTS:
-        return {"response": "I've reached my chat limit for this session! If you have more questions, feel free to email Von directly at voncastillovon@gmail.com.", "remaining": 0}
+    # Initialize or reset daily limit
+    user_data = user_limits.get(client_ip, {"count": 0, "date": today_str})
+    if user_data["date"] != today_str:
+        user_data = {"count": 0, "date": today_str}
+        
+    user_data["count"] += 1
+    user_limits[client_ip] = user_data
+    
+    if user_data["count"] > MAX_PROMPTS:
+        return {"response": "I've reached my chat limit for today! If you have more questions, feel free to email Von directly at voncastillovon@gmail.com.", "remaining": 0}
 
-    remaining = max(0, MAX_PROMPTS - user_limits[client_ip])
+    remaining = max(0, MAX_PROMPTS - user_data["count"])
 
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
