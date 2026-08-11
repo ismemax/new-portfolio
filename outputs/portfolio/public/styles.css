@@ -832,3 +832,55 @@ footer {
 .chat-submit { background: var(--pink); border: none; width: 36px; height: 36px; border-radius: 50%; color: white; font-weight: bold; font-size: 16px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background 0.2s; }
 .chat-submit:hover { background: #f6a1af; }
 @media(max-width:500px) { .chat-window { width: calc(100vw - 40px); right: -10px; } }
+[data-theme="dark"] {
+  --ink: #f5f4ed;
+  --muted: #a0a09a;
+  --line: #333333;
+  --paper: #111213;
+  --lime: #d4fa6a;
+  --pink: #f47d90;
+  --blue: #a3b8ff;
+}
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.contact-form {
+  margin-top: 40px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--pink);
+}
+.contact-form button {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+/* AI Rich Text markdown styles */
+.ai-message p { margin-top: 0; }
+.ai-message ul { margin: 10px 0; padding-left: 20px; }
+.ai-message li { margin-bottom: 5px; }
+.ai-message code { background: #00000020; padding: 2px 5px; border-radius: 4px; }
+.ai-message pre { background: #00000010; padding: 10px; border-radius: 6px; overflow-x: auto; }

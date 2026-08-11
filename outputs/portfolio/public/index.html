@@ -27,13 +27,18 @@
         ><a href="#contact">Contact</a
         ><a href="#" id="navResume" target="_blank" rel="noreferrer">Resume</a>
       </nav>
-      <button class="shuffle-toggle" id="shuffleToggle" type="button">
-        <span>✦</span> Surprise me
-      </button>
+      <div style="display: flex; gap: 15px; align-items: center;">
+        <button id="themeToggle" type="button" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 18px; color: var(--ink); padding: 0;">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <button class="shuffle-toggle" id="shuffleToggle" type="button">
+          <span>✦</span> Surprise me
+        </button>
+      </div>
     </header>
 
     <main id="top">
-      <section class="hero">
+      <section class="hero fade-in-up">
         <div class="hero-copy">
           <p class="eyebrow"><i></i> Available for opportunities</p>
           <h1>Building worlds,<br /><em>systems</em> &amp; connections.</h1>
@@ -65,14 +70,14 @@
         </div>
       </section>
 
-      <section class="stats" aria-label="Portfolio highlights">
+      <section class="stats fade-in-up" aria-label="Portfolio highlights">
         <div><strong>8</strong><span>Selected projects</span></div>
         <div><strong>4</strong><span>Creative disciplines</span></div>
         <div><strong>2022</strong><span>Building since</span></div>
         <div><strong>∞</strong><span>Ideas in progress</span></div>
       </section>
 
-      <section class="work-section" id="work">
+      <section class="work-section fade-in-up" id="work">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Selected work</p>
@@ -103,7 +108,7 @@
         </div>
       </section>
 
-      <section class="about" id="about">
+      <section class="about fade-in-up" id="about">
         <div class="about-mark">V<span>.</span></div>
         <div>
           <p class="eyebrow">A little about me</p>
@@ -128,12 +133,14 @@
         </div>
       </section>
 
-      <section class="contact" id="contact">
+      <section class="contact fade-in-up" id="contact">
         <p class="eyebrow">Get in touch</p>
         <h2>Have a project<br />in mind?</h2>
-        <a href="mailto:voncastillovon@gmail.com"
-          >Let's make it happen <span>↗</span></a
-        >
+        <form action="https://formspree.io/f/placeholder" method="POST" class="contact-form">
+          <input type="email" name="email" placeholder="Your Email Address" required />
+          <textarea name="message" placeholder="What would you like to discuss?" rows="4" required></textarea>
+          <button type="submit" class="button button-primary">Send Message <span>↗</span></button>
+        </form>
       </section>
     </main>
     <footer>
@@ -203,6 +210,7 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../config/content.js"></script>
     <script src="../src/agents/portfolioAgent.js"></script>
     <script src="../src/app.js"></script>

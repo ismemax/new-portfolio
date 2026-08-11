@@ -167,6 +167,48 @@ document.querySelector("#shuffleView").addEventListener("click", () => {
 renderFilters();
 renderProjects();
 
+// --- Dark Mode Logic ---
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+let currentTheme = localStorage.getItem('theme') || 'light';
+
+if (currentTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark');
+  themeIcon.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+  currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeIcon.textContent = '☀️';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeIcon.textContent = '🌙';
+  }
+  localStorage.setItem('theme', currentTheme);
+});
+
+// --- Scroll Animations Logic ---
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const fadeObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in-up').forEach(el => {
+  fadeObserver.observe(el);
+});
+
 // --- AI Chat Widget Logic ---
 const chatBubble = document.getElementById('chat-bubble');
 const chatWindow = document.getElementById('chat-window');
@@ -213,7 +255,13 @@ chatClose.addEventListener('click', () => {
 function appendMessage(text, sender) {
   const msgDiv = document.createElement('div');
   msgDiv.className = "chat-message " + sender + "-message";
-  msgDiv.textContent = text;
+  
+  if (sender === 'ai' && typeof marked !== 'undefined') {
+    msgDiv.innerHTML = marked.parse(text);
+  } else {
+    msgDiv.textContent = text;
+  }
+  
   chatHistory.appendChild(msgDiv);
   chatHistory.scrollTop = chatHistory.scrollHeight;
 }
