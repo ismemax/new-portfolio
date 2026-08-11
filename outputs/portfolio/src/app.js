@@ -202,6 +202,46 @@ document.querySelector("#shuffleView").addEventListener("click", () => {
 renderFilters();
 renderProjects();
 
+// --- Contact Form AJAX Logic ---
+const contactForm = document.getElementById('contact-form');
+const contactStatus = document.getElementById('contact-status');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    contactStatus.style.display = 'block';
+    contactStatus.style.color = 'inherit';
+    contactStatus.textContent = 'Sending message...';
+    
+    const data = new FormData(contactForm);
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        contactStatus.textContent = "Thanks! Your message has been sent successfully.";
+        contactForm.reset();
+      } else {
+        const responseData = await response.json();
+        if (Object.hasOwn(responseData, 'errors')) {
+          contactStatus.textContent = responseData.errors.map(error => error.message).join(", ");
+        } else {
+          contactStatus.textContent = "Oops! There was a problem submitting your form";
+        }
+        contactStatus.style.color = 'var(--pink)';
+      }
+    } catch (error) {
+      contactStatus.textContent = "Oops! There was a problem submitting your form";
+      contactStatus.style.color = 'var(--pink)';
+    }
+  });
+}
+
 // --- Dark Mode Logic ---
 const themeToggle = document.getElementById('themeToggle');
 let currentTheme = localStorage.getItem('theme') || 'light';
