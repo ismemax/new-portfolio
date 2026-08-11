@@ -134,6 +134,7 @@ function openModal(id) {
   content.dataset.id = id;
   showTab("overview");
   modal.showModal();
+  if (typeof cursor !== 'undefined') modal.appendChild(cursor);
 }
 function showTab(tab) {
   const p = projects.find((x) => x.id === content.dataset.id),
@@ -154,9 +155,18 @@ content.addEventListener("click", (e) => {
 });
 document
   .querySelector("#modalClose")
-  .addEventListener("click", () => modal.close());
+  .addEventListener("click", () => {
+    modal.close();
+    if (typeof cursor !== 'undefined') document.body.appendChild(cursor);
+  });
 modal.addEventListener("click", (e) => {
-  if (e.target === modal) modal.close();
+  if (e.target === modal) {
+    modal.close();
+    if (typeof cursor !== 'undefined') document.body.appendChild(cursor);
+  }
+});
+modal.addEventListener("close", () => {
+  if (typeof cursor !== 'undefined') document.body.appendChild(cursor);
 });
 const shufflePanel = document.querySelector("#shufflePanel"),
   shuffleTitle = document.querySelector("#shuffleTitle"),

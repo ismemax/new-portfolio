@@ -21,7 +21,7 @@ body {
   overflow-x: hidden;
   cursor: none;
 }
-a, button, input, textarea, .chat-bubble, .theme-toggle, .card, .tag, .filter {
+* {
   cursor: none !important;
 }
 .custom-cursor {
@@ -592,10 +592,6 @@ footer {
   width: calc(100% - 32px);
   background: #f7f6f1;
   box-shadow: 0 20px 70px #0008;
-  cursor: auto;
-}
-.project-modal a, .project-modal button, .project-modal .tab {
-  cursor: pointer !important;
 }
 .project-modal::backdrop {
   background: #111c;
