@@ -30,7 +30,12 @@ MAX_PROMPTS = 5
 @app.post("/api/chat")
 async def chat(request_data: ChatRequest, request: Request):
     # 1. Simple Rate Limiting by IP
-    client_ip = request.client.host if request.client else "unknown"
+    forwarded = request.headers.get("x-forwarded-for")
+    if forwarded:
+        client_ip = forwarded.split(",")[0].strip()
+    else:
+        client_ip = request.client.host if request.client else "unknown"
+        
     user_limits[client_ip] = user_limits.get(client_ip, 0) + 1
     
     if user_limits[client_ip] > MAX_PROMPTS:

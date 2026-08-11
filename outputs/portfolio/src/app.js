@@ -174,8 +174,15 @@ const chatClose = document.getElementById('chat-close');
 const chatForm = document.getElementById('chat-form');
 const chatInput = document.getElementById('chat-input');
 const chatHistory = document.getElementById('chat-history');
+const chatRemaining = document.getElementById('chat-remaining');
 
 const agent = typeof PortfolioAgent !== 'undefined' ? new PortfolioAgent() : null;
+
+// Initialize remaining count from local storage
+let savedRemaining = localStorage.getItem('chatRemaining');
+if (savedRemaining !== null) {
+  chatRemaining.textContent = savedRemaining;
+}
 
 chatBubble.addEventListener('click', () => {
   chatWindow.classList.remove('hidden');
@@ -199,6 +206,13 @@ chatForm.addEventListener('submit', async (e) => {
   const text = chatInput.value.trim();
   if (!text) return;
   
+  // Prevent sending if client knows limit is reached
+  if (chatRemaining.textContent === '0') {
+    appendMessage("I've reached my chat limit for this session! Feel free to email Von.", 'ai');
+    chatInput.value = '';
+    return;
+  }
+  
   appendMessage(text, 'user');
   chatInput.value = '';
   
@@ -209,7 +223,8 @@ chatForm.addEventListener('submit', async (e) => {
     if (typeof data === 'object' && data !== null) {
       appendMessage(data.response, 'ai');
       if (data.remaining !== undefined) {
-        document.getElementById('chat-remaining').textContent = data.remaining;
+        chatRemaining.textContent = data.remaining;
+        localStorage.setItem('chatRemaining', data.remaining);
       }
     } else {
       appendMessage(data, 'ai');
