@@ -56,6 +56,9 @@ if (document.querySelector("#navResume")) {
 if (document.querySelector("#aboutResume")) {
   document.querySelector("#aboutResume").href = profile.resume;
 }
+if (document.querySelector("#stats-projects-count")) {
+  document.querySelector("#stats-projects-count").textContent = projects.length;
+}
 const grid = document.querySelector("#projectGrid"),
   filters = document.querySelector("#filters"),
   search = document.querySelector("#search"),
