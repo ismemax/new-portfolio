@@ -592,6 +592,10 @@ footer {
   width: calc(100% - 32px);
   background: #f7f6f1;
   box-shadow: 0 20px 70px #0008;
+  cursor: auto;
+}
+.project-modal a, .project-modal button, .project-modal .tab {
+  cursor: pointer !important;
 }
 .project-modal::backdrop {
   background: #111c;
@@ -605,8 +609,9 @@ footer {
   height: 32px;
   border: 1px solid var(--ink);
   background: var(--paper);
+  color: var(--ink);
   font-size: 21px;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 .modal-hero {
   min-height: 260px;
