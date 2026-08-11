@@ -267,7 +267,11 @@ function appendMessage(text, sender) {
   msgDiv.className = "chat-message " + sender + "-message";
   
   if (sender === 'ai' && typeof marked !== 'undefined') {
-    msgDiv.innerHTML = marked.parse(text);
+    let rawHtml = marked.parse(text);
+    if (typeof DOMPurify !== 'undefined') {
+      rawHtml = DOMPurify.sanitize(rawHtml);
+    }
+    msgDiv.innerHTML = rawHtml;
   } else {
     msgDiv.textContent = text;
   }
