@@ -188,7 +188,10 @@
         </div>
       </div>
       <form id="chat-form" class="chat-form">
-        <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off" required />
+        <div style="flex: 1; position: relative; display: flex; align-items: center;">
+          <input type="text" id="chat-input" placeholder="Ask me anything..." autocomplete="off" maxlength="100" required style="width: 100%; padding-right: 50px;" />
+          <span id="chat-char-count" style="position: absolute; right: 12px; font-size: 10px; color: #888; pointer-events: none;">0/100</span>
+        </div>
         <span id="chat-remaining" style="font-size: 11px; color: #888; align-self: center; padding: 0 4px;"
           title="Prompts remaining">5</span>
         <button type="submit" class="chat-submit" aria-label="Send">↑</button>

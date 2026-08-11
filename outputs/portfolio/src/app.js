@@ -303,6 +303,13 @@ chatClose.addEventListener('click', () => {
   chatWindow.classList.add('hidden');
 });
 
+const charCountSpan = document.getElementById('chat-char-count');
+if (chatInput && charCountSpan) {
+  chatInput.addEventListener('input', () => {
+    charCountSpan.textContent = `${chatInput.value.length}/100`;
+  });
+}
+
 function appendMessage(text, sender) {
   const msgDiv = document.createElement('div');
   msgDiv.className = "chat-message " + sender + "-message";
@@ -330,11 +337,13 @@ chatForm.addEventListener('submit', async (e) => {
   if (chatRemaining.textContent === '0') {
     appendMessage("I've reached my chat limit for today! Feel free to email Von.", 'ai');
     chatInput.value = '';
+    if (charCountSpan) charCountSpan.textContent = '0/100';
     return;
   }
   
   appendMessage(text, 'user');
   chatInput.value = '';
+  if (charCountSpan) charCountSpan.textContent = '0/100';
   
   if (agent) {
     const data = await agent.handleMessage(text);
