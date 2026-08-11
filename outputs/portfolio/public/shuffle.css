@@ -1,0 +1,100 @@
+.shuffle-toggle {
+  border: 1px solid var(--ink);
+  background: transparent;
+  padding: 10px 14px;
+  font: 600 12px Manrope;
+  cursor: pointer;
+}
+.shuffle-toggle span {
+  font-size: 15px;
+  margin-right: 5px;
+}
+.shuffle-panel {
+  position: fixed;
+  z-index: 5;
+  right: 18px;
+  bottom: 18px;
+  width: min(420px, calc(100% - 28px));
+  background: #252628;
+  color: #fff;
+  padding: 29px;
+  box-shadow: 0 20px 60px #0007;
+}
+.shuffle-panel[hidden] {
+  display: none;
+}
+.shuffle-close {
+  position: absolute;
+  right: 13px;
+  top: 9px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.shuffle-panel .eyebrow {
+  margin-bottom: 7px;
+  color: #d3d5cf;
+}
+.shuffle-kicker,
+.shuffle-category {
+  font: 11px "DM Mono";
+  margin: 0;
+}
+.shuffle-kicker {
+  color: #aaa;
+}
+.shuffle-category {
+  color: var(--lime);
+  margin-top: 26px;
+}
+.shuffle-panel h2 {
+  font-size: 37px;
+  letter-spacing: -0.07em;
+  margin: 5px 0 9px;
+}
+.shuffle-description {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #dcddd7;
+  min-height: 62px;
+}
+.shuffle-tags {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 14px 0 21px;
+}
+.shuffle-tags span {
+  font: 10px "DM Mono";
+  border: 1px solid #ffffff55;
+  padding: 5px;
+}
+.shuffle-actions {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.shuffle-again {
+  background: transparent;
+  color: #fff;
+  border: 0;
+  border-bottom: 1px solid #fff;
+  padding: 6px 0;
+  font: 700 11px Manrope;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .shuffle-toggle {
+    padding: 8px 10px;
+  }
+  .shuffle-panel {
+    right: 14px;
+    bottom: 14px;
+    padding: 25px;
+  }
+  .shuffle-panel h2 {
+    font-size: 32px;
+  }
+}
