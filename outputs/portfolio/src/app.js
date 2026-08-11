@@ -1,3 +1,30 @@
+// --- Scroll Animations Logic (Moved to top to guarantee execution) ---
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const fadeObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in-up').forEach(el => {
+  fadeObserver.observe(el);
+});
+
+// Immediately show everything just in case there's a fatal error later, 
+// using a window error listener as a fail-safe.
+window.addEventListener('error', () => {
+  document.querySelectorAll('.fade-in-up').forEach(el => {
+    el.classList.add('active');
+  });
+});
 
 const { profile, projects, projectLinks } = portfolioContent;
 const categories = [
@@ -187,26 +214,6 @@ themeToggle.addEventListener('click', () => {
     themeIcon.textContent = '🌙';
   }
   localStorage.setItem('theme', currentTheme);
-});
-
-// --- Scroll Animations Logic ---
-const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
-};
-
-const fadeObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.fade-in-up').forEach(el => {
-  fadeObserver.observe(el);
 });
 
 // --- AI Chat Widget Logic ---
