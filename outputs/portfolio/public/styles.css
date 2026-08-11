@@ -859,7 +859,7 @@ footer {
 .chat-history { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; background: #131413; }
 .chat-message { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 12px; line-height: 1.5; }
 .ai-message { background: #252625; color: #d7dbd1; align-self: flex-start; border-bottom-left-radius: 2px; }
-.user-message { background: var(--lime); color: var(--ink); align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 500; }
+.user-message { background: var(--lime); color: #111213; align-self: flex-end; border-bottom-right-radius: 2px; font-weight: 500; }
 .chat-form { display: flex; padding: 12px; background: #1a1c1a; border-top: 1px solid #343534; gap: 8px; }
 #chat-input { flex: 1; background: #252625; border: 1px solid #4a4b45; border-radius: 20px; padding: 10px 15px; color: white; font-family: inherit; font-size: 12px; outline: none; }
 #chat-input:focus { border-color: var(--lime); }
