@@ -43,9 +43,6 @@ document.querySelector(".hero .eyebrow").innerHTML =
   `<i></i>${profile.availability}`;
 document.querySelector(".hero-intro").textContent = profile.intro;
 document.querySelector(".about p:not(.eyebrow)").textContent = profile.about;
-const contactLink = document.querySelector("#contact a");
-contactLink.href = `mailto:${profile.email}`;
-contactLink.innerHTML = `${profile.email} <span>↗</span>`;
 document.querySelector("footer span").textContent =
   `© ${profile.copyrightYear} ${profile.name}`;
 document.querySelector("footer span:last-child").innerHTML =
