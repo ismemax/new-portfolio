@@ -69,9 +69,31 @@
         { "label": "GitHub", "url": "https://github.com/maleckot/IPOPHL" },
         { "label": "Website", "url": "https://ipophl.vercel.app" }
       ]
+    },
+    "univ": {
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/ismemax/Univ" },
+        { "label": "Website", "url": "https://univ-pi.vercel.app" }
+      ]
     }
   },
   "projects": [
+    {
+      "id": "univ",
+      "title": "Univ (UAQS)",
+      "role": "Full Stack Developer",
+      "category": "Full Stack",
+      "date": "Feb 2026 - May 2026",
+      "art": "full",
+      "desc": "A real-time polling and assessment engine built for the University of Makati to enhance classroom engagement.",
+      "features": [
+        "Implemented real-time session synchronization using Firebase RTDB",
+        "Built a comprehensive questionnaire form builder",
+        "Integrated PDF generation for academic reporting"
+      ],
+      "stack": ["React", "TypeScript", "Vite", "Firebase"],
+      "arch": ["React Client", "Firebase RTDB"]
+    },
     {
       "id": "ipophl",
       "title": "IPOPHL",
