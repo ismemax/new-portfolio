@@ -104,7 +104,7 @@ nav a {
 .hero-intro {
   max-width: 500px;
   margin: 28px 0;
-  color: #50514c;
+  color: var(--muted);
   line-height: 1.75;
   font-size: 15px;
 }
@@ -633,7 +633,7 @@ footer {
 .tab-panel p {
   font-size: 13px;
   line-height: 1.75;
-  color: #4e504b;
+  color: var(--muted);
 }
 .feature-list {
   padding: 0;
