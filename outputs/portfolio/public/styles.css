@@ -556,8 +556,8 @@ nav a {
 .contact {
   min-height: 425px;
   padding: 108px max(42px, calc((100% - 1196px) / 2));
-  background: #111213;
-  color: #f5f4ed;
+  background: var(--lime);
+  color: #111213;
   position: relative;
 }
 .contact h2 {
@@ -567,7 +567,7 @@ nav a {
   position: absolute;
   right: max(42px, calc((100% - 1196px) / 2));
   bottom: 118px;
-  color: var(--ink);
+  color: #111213;
   font-size: 15px;
   font-weight: 800;
   text-decoration: none;
@@ -911,8 +911,8 @@ footer {
 .contact-form button {
   align-self: flex-start;
   margin-top: 10px;
-  background: var(--lime);
-  color: #111213;
+  background: #111213;
+  color: #f5f4ed;
 }
 /* AI Rich Text markdown styles */
 .ai-message p { margin-top: 0; }
