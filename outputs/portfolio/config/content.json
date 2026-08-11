@@ -63,9 +63,31 @@
       "links": [
         { "label": "GitHub", "url": "https://github.com/ismemax/kinaiyah-ka-feh" }
       ]
+    },
+    "ipophl": {
+      "links": [
+        { "label": "GitHub", "url": "https://github.com/maleckot/IPOPHL" },
+        { "label": "Website", "url": "https://ipophl.vercel.app" }
+      ]
     }
   },
   "projects": [
+    {
+      "id": "ipophl",
+      "title": "IPOPHL",
+      "role": "Back End Developer",
+      "category": "Backend & APIs",
+      "date": "Jun 2026 - Present",
+      "art": "backend",
+      "desc": "A mobile application for the Intellectual Property Office of the Philippines, built with Expo and React Native.",
+      "features": [
+        "Developed robust backend services for mobile client consumption",
+        "Integrated file-based routing and seamless API data fetching",
+        "Maintained backend logic supporting a React Native Expo application"
+      ],
+      "stack": ["TypeScript", "React Native", "Expo", "Node.js"],
+      "arch": ["React Native Client", "Backend API"]
+    },
     {
       "id": "scamester",
       "title": "Scamester",
