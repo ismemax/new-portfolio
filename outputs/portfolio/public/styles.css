@@ -125,7 +125,7 @@ nav a {
 }
 .button-primary {
   background: var(--ink);
-  color: #fff;
+  color: var(--paper);
 }
 .button-primary span {
   font-size: 19px;
@@ -291,13 +291,14 @@ nav a {
   border: 1px solid #bbbcb5;
   padding: 8px 12px;
   background: transparent;
+  color: var(--ink);
   font: 500 11px "DM Mono";
   cursor: pointer;
 }
 .filter[aria-pressed="true"] {
   background: var(--ink);
   border-color: var(--ink);
-  color: #fff;
+  color: var(--paper);
 }
 .search {
   border-bottom: 1px solid var(--ink);
@@ -442,6 +443,7 @@ nav a {
   left: 17px;
   top: 16px;
   background: #ffffffdd;
+  color: #111;
   padding: 6px 7px;
   font: 10px "DM Mono";
 }
@@ -449,8 +451,8 @@ nav a {
   position: absolute;
   right: 17px;
   bottom: 16px;
-  background: #111;
-  color: #fff;
+  background: var(--ink);
+  color: var(--paper);
   padding: 6px 8px;
   font: 10px "DM Mono";
 }
@@ -479,11 +481,13 @@ nav a {
   border: 1px solid var(--line);
   padding: 5px 6px;
   background: transparent;
+  color: var(--ink);
   cursor: pointer;
 }
 .tag:hover {
   background: var(--lime);
   border-color: var(--lime);
+  color: #111;
 }
 .empty-state {
   text-align: center;
@@ -492,7 +496,7 @@ nav a {
 }
 .about {
   background: var(--ink);
-  color: #fff;
+  color: var(--paper);
   padding: 120px max(42px, calc((100% - 1196px) / 2));
   display: grid;
   grid-template-columns: 0.6fr 1.4fr;
@@ -621,6 +625,7 @@ footer {
   padding: 0 0 11px;
   border: 0;
   background: transparent;
+  color: var(--ink);
   font: 600 11px "DM Mono";
   cursor: pointer;
 }
