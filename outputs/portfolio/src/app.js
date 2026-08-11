@@ -193,22 +193,18 @@ renderProjects();
 
 // --- Dark Mode Logic ---
 const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
 let currentTheme = localStorage.getItem('theme') || 'light';
 
 if (currentTheme === 'dark') {
   document.documentElement.setAttribute('data-theme', 'dark');
-  themeIcon.textContent = '☀️';
 }
 
 themeToggle.addEventListener('click', () => {
   currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   if (currentTheme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
-    themeIcon.textContent = '☀️';
   } else {
     document.documentElement.removeAttribute('data-theme');
-    themeIcon.textContent = '🌙';
   }
   localStorage.setItem('theme', currentTheme);
 });

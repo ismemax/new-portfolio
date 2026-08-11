@@ -27,8 +27,11 @@
     </nav>
     <div style="display: flex; gap: 15px; align-items: center;">
       <button id="themeToggle" type="button" aria-label="Toggle dark mode"
-        style="background: none; border: none; cursor: pointer; font-size: 18px; color: var(--ink); padding: 0;">
-        <span id="themeIcon">🌙</span>
+        style="background: none; border: none; cursor: pointer; font-size: 18px; color: var(--ink); padding: 0; display: flex; align-items: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"></path>
+        </svg>
       </button>
       <button class="shuffle-toggle" id="shuffleToggle" type="button">
         <span>✦</span> Surprise me
