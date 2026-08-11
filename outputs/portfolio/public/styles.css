@@ -19,7 +19,31 @@ html {
 body {
   margin: 0;
   overflow-x: hidden;
+  cursor: none;
 }
+a, button, input, textarea, .chat-bubble, .theme-toggle, .card, .tag, .filter {
+  cursor: none !important;
+}
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--lime);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+.custom-cursor.hover {
+  width: 45px;
+  height: 45px;
+  background: var(--pink);
+}
+
 body, main, section, header, footer, .about, .contact, .card-category, .card-index, button, input, textarea, .chat-window, .chat-header, .chat-bubble, .ai-message, .user-message {
   transition: background-color 0.4s ease, background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }

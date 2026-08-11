@@ -301,3 +301,27 @@ chatForm.addEventListener('submit', async (e) => {
     appendMessage('AI Agent is offline.', 'ai');
   }
 });
+
+// --- Custom Cursor Logic ---
+const cursor = document.createElement('div');
+cursor.className = 'custom-cursor';
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
+document.addEventListener('mouseover', (e) => {
+  const isInteractive = e.target.closest('a, button, input, textarea, .card, .filter, .tag, .theme-toggle');
+  if (isInteractive) {
+    cursor.classList.add('hover');
+  }
+});
+
+document.addEventListener('mouseout', (e) => {
+  const isInteractive = e.target.closest('a, button, input, textarea, .card, .filter, .tag, .theme-toggle');
+  if (isInteractive) {
+    cursor.classList.remove('hover');
+  }
+});
