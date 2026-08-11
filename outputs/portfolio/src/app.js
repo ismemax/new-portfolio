@@ -26,7 +26,8 @@ window.addEventListener('error', () => {
   });
 });
 
-const { profile, projects, projectLinks } = portfolioContent;
+$portfolioContent = await fetch('../config/content.json').then(res => res.json());
+const { profile, projects, projectLinks } = $portfolioContent;
 const categories = [
   "All",
   "Game Dev",

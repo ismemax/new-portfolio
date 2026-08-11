@@ -1,30 +1,6 @@
 class PortfolioAgent {
   constructor() {
     this.apiUrl = "/api/chat";
-    
-    // Construct the context from the portfolio data
-    const profile = portfolioContent.profile;
-    const projects = portfolioContent.projects.map(p => `- ${p.title} (${p.category}): ${p.desc} Stack: ${p.stack.join(", ")}`).join("\n");
-    
-    this.systemInstruction = `
-You are an AI assistant for Von Andrew M. Castillo's portfolio website. 
-Your ONLY purpose is to answer questions about Von, his projects, his skills, and his contact information based strictly on the data provided below.
-Keep your answers extremely concise (1-2 short sentences maximum).
-If a user asks you anything outside of this scope (e.g., coding help, general knowledge, summarizing unrelated topics, writing essays, or acting as a search engine), you must politely decline and redirect them to asking about Von's portfolio.
-
-PORTFOLIO CONTEXT:
-Name: ${profile.name} (${profile.shortName})
-Role: ${profile.role}
-Intro: ${profile.intro}
-About: ${profile.about}
-Email: ${profile.email}
-GitHub: ${profile.socials.github}
-LinkedIn: ${profile.socials.linkedin}
-
-PROJECTS:
-${projects}
-    `;
-
     this.history = [];
   }
 
@@ -32,8 +8,7 @@ ${projects}
     try {
       const payload = {
         userMessage: userMessage,
-        history: this.history,
-        systemInstruction: this.systemInstruction
+        history: this.history
       };
 
       const response = await fetch(this.apiUrl, {
