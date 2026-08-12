@@ -32,10 +32,15 @@
         }
       ]
     },
-    "deception": { "links": [] },
+    "deception": {
+      "links": []
+    },
     "pet-feeder": {
       "links": [
-        { "label": "GitHub", "url": "https://github.com/NardHodo/PetFeeder-Main" }
+        {
+          "label": "GitHub",
+          "url": "https://github.com/NardHodo/PetFeeder-Main"
+        }
       ]
     },
     "library": {
@@ -56,24 +61,42 @@
     },
     "cybercafe": {
       "links": [
-        { "label": "GitHub", "url": "https://github.com/NotoriousGeeks/gudjavuh" }
+        {
+          "label": "GitHub",
+          "url": "https://github.com/NotoriousGeeks/gudjavuh"
+        }
       ]
     },
     "kinalyah": {
       "links": [
-        { "label": "GitHub", "url": "https://github.com/ismemax/kinaiyah-ka-feh" }
+        {
+          "label": "GitHub",
+          "url": "https://github.com/ismemax/kinaiyah-ka-feh"
+        }
       ]
     },
     "ipophl": {
       "links": [
-        { "label": "GitHub", "url": "https://github.com/maleckot/IPOPHL" },
-        { "label": "Website", "url": "https://ipophl.vercel.app" }
+        {
+          "label": "GitHub",
+          "url": "https://github.com/maleckot/IPOPHL"
+        },
+        {
+          "label": "Website",
+          "url": "https://ipophl.vercel.app"
+        }
       ]
     },
     "univ": {
       "links": [
-        { "label": "GitHub", "url": "https://github.com/ismemax/Univ" },
-        { "label": "Website", "url": "https://univ-pi.vercel.app" }
+        {
+          "label": "GitHub",
+          "url": "https://github.com/ismemax/Univ"
+        },
+        {
+          "label": "Website",
+          "url": "https://univ-pi.vercel.app"
+        }
       ]
     }
   },
@@ -91,8 +114,16 @@
         "Built a comprehensive questionnaire form builder",
         "Integrated PDF generation for academic reporting"
       ],
-      "stack": ["React", "TypeScript", "Vite", "Firebase"],
-      "arch": ["React Client", "Firebase RTDB"]
+      "stack": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Firebase"
+      ],
+      "arch": [
+        "React Client",
+        "Firebase RTDB"
+      ]
     },
     {
       "id": "ipophl",
@@ -107,8 +138,16 @@
         "Integrated file-based routing and seamless API data fetching",
         "Maintained backend logic supporting a React Native Expo application"
       ],
-      "stack": ["TypeScript", "React Native", "Expo", "Node.js"],
-      "arch": ["React Native Client", "Backend API"]
+      "stack": [
+        "TypeScript",
+        "React Native",
+        "Expo",
+        "Node.js"
+      ],
+      "arch": [
+        "React Native Client",
+        "Backend API"
+      ]
     },
     {
       "id": "scamester",
@@ -123,8 +162,17 @@
         "Built responsive in-game UI and state transitions",
         "Created REST endpoints for game-to-model communication"
       ],
-      "stack": ["Unity", "C#", "Firebase", "REST API"],
-      "arch": ["Unity Client", "Firebase", "Inference API"]
+      "stack": [
+        "Unity",
+        "C#",
+        "Firebase",
+        "REST API"
+      ],
+      "arch": [
+        "Unity Client",
+        "Firebase",
+        "Inference API"
+      ]
     },
     {
       "id": "booklat",
@@ -139,8 +187,17 @@
         "Established real-time Firebase datastore integration",
         "Automated image compression and cover hosting with Cloudinary"
       ],
-      "stack": ["C#", "SQL", "Firebase", "Cloudinary"],
-      "arch": ["C# Service", "Firebase", "Cloudinary"]
+      "stack": [
+        "C#",
+        "SQL",
+        "Firebase",
+        "Cloudinary"
+      ],
+      "arch": [
+        "C# Service",
+        "Firebase",
+        "Cloudinary"
+      ]
     },
     {
       "id": "deception",
@@ -155,8 +212,16 @@
         "Integrated animation, particles, music and sound effects",
         "Built complete game-loop and state-management logic"
       ],
-      "stack": ["Unity", "C#", "UI/UX"],
-      "arch": ["Player Input", "Unity Logic", "Audio + FX"]
+      "stack": [
+        "Unity",
+        "C#",
+        "UI/UX"
+      ],
+      "arch": [
+        "Player Input",
+        "Unity Logic",
+        "Audio + FX"
+      ]
     },
     {
       "id": "pet-feeder",
@@ -171,8 +236,17 @@
         "Connected the mobile client to the board wirelessly",
         "Implemented trigger logic across hardware and application layers"
       ],
-      "stack": ["NodeMCU", "Arduino", "Java", "IoT"],
-      "arch": ["Java App", "NodeMCU", "Arduino"]
+      "stack": [
+        "NodeMCU",
+        "Arduino",
+        "Java",
+        "IoT"
+      ],
+      "arch": [
+        "Java App",
+        "NodeMCU",
+        "Arduino"
+      ]
     },
     {
       "id": "library",
@@ -187,8 +261,15 @@
         "Built core system execution logic in C#",
         "Optimized queries for stronger retrieval performance"
       ],
-      "stack": ["C#", "SQL"],
-      "arch": ["Desktop App", "C# Logic", "SQL Database"]
+      "stack": [
+        "C#",
+        "SQL"
+      ],
+      "arch": [
+        "Desktop App",
+        "C# Logic",
+        "SQL Database"
+      ]
     },
     {
       "id": "kopi",
@@ -203,8 +284,16 @@
         "Implemented transaction calculations and session order logic",
         "Partnered with design to refine user flow"
       ],
-      "stack": ["JavaScript", "HTML", "CSS"],
-      "arch": ["POS UI", "JS Session", "Order Total"]
+      "stack": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "arch": [
+        "POS UI",
+        "JS Session",
+        "Order Total"
+      ]
     },
     {
       "id": "cybercafe",
@@ -219,8 +308,16 @@
         "Implemented socket communication and message listeners",
         "Contributed to the network security design"
       ],
-      "stack": ["Java", "P2P", "Networking"],
-      "arch": ["Node A", "P2P Protocol", "Node B"]
+      "stack": [
+        "Java",
+        "P2P",
+        "Networking"
+      ],
+      "arch": [
+        "Node A",
+        "P2P Protocol",
+        "Node B"
+      ]
     },
     {
       "id": "kinalyah",
@@ -235,23 +332,32 @@
         "Built a responsive HTML, CSS and JavaScript frontend",
         "Added custom animation and a dynamic theme toggle"
       ],
-      "stack": ["JavaScript", "HTML", "CSS", "UI/UX"],
-      "arch": ["Storefront UI", "Theme Engine", "Client State"]
+      "stack": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "UI/UX"
+      ],
+      "arch": [
+        "Storefront UI",
+        "Theme Engine",
+        "Client State"
+      ]
     }
   ],
   "certifications": [
     {
       "id": "cert-1",
-      "title": "Database Certification",
-      "issuer": "Certification Provider",
-      "date": "2026",
+      "title": "IT Specialist - Databases",
+      "issuer": "Certiport, a Pearson VUE business",
+      "date": "2025-2030",
       "fileUrl": "./certs/Castillo,%20Von%20Andrew%20M-Database.pdf",
       "type": "pdf"
     },
     {
       "id": "cert-2",
-      "title": "Cybersecurity Completion",
-      "issuer": "Certification Provider",
+      "title": "Microsoft Cybersecurity Course: Security, Compliance, and Identity Fundamentals",
+      "issuer": "TESDA",
       "date": "2026",
       "fileUrl": "./certs/Certificate_of_Completion-Cybersecurity.pdf",
       "type": "pdf"
