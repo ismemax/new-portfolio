@@ -523,7 +523,7 @@ nav a {
 }
 .certifications {
   max-width: 1280px;
-  padding: 0 42px 130px;
+  padding: 80px 42px 130px;
   margin: auto;
 }
 .cert-grid {
@@ -850,7 +850,7 @@ footer {
     padding: 0 20px 75px;
   }
   .certifications {
-    padding: 0 20px 75px;
+    padding: 50px 20px 75px;
   }
   .section-heading {
     display: block;

@@ -26,7 +26,7 @@ window.addEventListener('error', () => {
   });
 });
 
-const $portfolioContent = await fetch('../config/content.json').then(res => res.json());
+const $portfolioContent = await fetch('../config/content.json?v=' + Date.now()).then(res => res.json());
 const { profile, projects, projectLinks, certifications } = $portfolioContent;
 const categories = [
   "All",
