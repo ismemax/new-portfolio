@@ -27,7 +27,7 @@ window.addEventListener('error', () => {
 });
 
 const $portfolioContent = await fetch('../config/content.json').then(res => res.json());
-const { profile, projects, projectLinks } = $portfolioContent;
+const { profile, projects, projectLinks, certifications } = $portfolioContent;
 const categories = [
   "All",
   "Game Dev",
@@ -204,6 +204,21 @@ document.querySelector("#shuffleView").addEventListener("click", () => {
 });
 renderFilters();
 renderProjects();
+
+// --- Certifications Logic ---
+const certGrid = document.querySelector("#certGrid");
+if (certGrid && certifications) {
+  certGrid.innerHTML = certifications.map((c) => 
+    `<a class="cert-card" href="${c.fileUrl}" target="_blank" rel="noreferrer">
+      <div style="position: relative; z-index: 1;">
+        <span class="cert-type">${c.type}</span>
+        <h3 class="cert-title">${c.title}</h3>
+        <p class="cert-issuer">${c.issuer}</p>
+      </div>
+      <div class="cert-date" style="position: relative; z-index: 1;">${c.date}</div>
+    </a>`
+  ).join("");
+}
 
 // --- Contact Form AJAX Logic ---
 const contactForm = document.getElementById('contact-form');

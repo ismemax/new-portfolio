@@ -1,0 +1,6 @@
+tree e6d4bba13f581059fda1a9177bfaeb9f49dcab44
+parent 2d0e41f475feed3e9f340c6e62802e5e418574de
+author Von Andrew Castillo <voncastillovon@gmail.com> 1786477228 +0800
+committer Von Andrew Castillo <voncastillovon@gmail.com> 1786477228 +0800
+
+Fix dark mode text colors and update theme icon to SVG
