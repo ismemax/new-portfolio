@@ -637,7 +637,7 @@ nav a {
 .contact h2 {
   font-size: clamp(50px, 6vw, 82px);
 }
-.contact a {
+.contact > a {
   position: absolute;
   right: max(42px, calc((100% - 1196px) / 2));
   bottom: 118px;
@@ -648,7 +648,7 @@ nav a {
   border-bottom: 1px solid;
   padding-bottom: 6px;
 }
-.contact a span {
+.contact > a span {
   font-size: 20px;
   margin-left: 8px;
 }
